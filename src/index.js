@@ -119,19 +119,19 @@ class AlertsPlugin {
 
     if (definition.okActions) {
       definition.okActions.map((alertTopic) => {
-        okActions.push(alertTopics[alertTopic].ok);
+        alertTopics[alertTopic] && okActions.push(alertTopics[alertTopic].ok);
       });
     }
 
     if (definition.alarmActions) {
       definition.alarmActions.map((alertTopic) => {
-        alarmActions.push(alertTopics[alertTopic].alarm);
+        alertTopics[alertTopic] && alarmActions.push(alertTopics[alertTopic].alarm);
       });
     }
 
     if (definition.insufficientDataActions) {
       definition.insufficientDataActions.map((alertTopic) => {
-        insufficientDataActions.push(alertTopics[alertTopic].insufficientData);
+        alertTopics[alertTopic] && insufficientDataActions.push(alertTopics[alertTopic].insufficientData);
       });
     }
 
